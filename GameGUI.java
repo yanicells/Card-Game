@@ -173,27 +173,27 @@ public class GameGUI implements ActionListener {
 
         // Style action buttons with better appearance
         Font buttonFont = new Font("Arial", Font.BOLD, 12);
-        
+
         attackButton.setPreferredSize(new Dimension(110, 40));
         swapButton.setPreferredSize(new Dimension(110, 40));
         ultimateButton.setPreferredSize(new Dimension(110, 40));
         healButton.setPreferredSize(new Dimension(110, 40));
-        
+
         attackButton.setBackground(new Color(233, 233, 233));
         swapButton.setBackground(new Color(233, 233, 233));
         ultimateButton.setBackground(new Color(233, 233, 233));
         healButton.setBackground(new Color(233, 233, 233));
-        
+
         attackButton.setFont(buttonFont);
         swapButton.setFont(buttonFont);
         ultimateButton.setFont(buttonFont);
         healButton.setFont(buttonFont);
-        
+
         attackButton.setBorder(BorderFactory.createRaisedBevelBorder());
         swapButton.setBorder(BorderFactory.createRaisedBevelBorder());
         ultimateButton.setBorder(BorderFactory.createRaisedBevelBorder());
         healButton.setBorder(BorderFactory.createRaisedBevelBorder());
-        
+
         attackButton.setFocusable(false);
         swapButton.setFocusable(false);
         ultimateButton.setFocusable(false);
@@ -357,17 +357,17 @@ public class GameGUI implements ActionListener {
         textArea.setBackground(new Color(233, 233, 233));
         textArea.setFont(mainFont);
         textArea.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLoweredBevelBorder(),
-            BorderFactory.createEmptyBorder(5, 8, 5, 8)));
-            
+                BorderFactory.createLoweredBevelBorder(),
+                BorderFactory.createEmptyBorder(5, 8, 5, 8)));
+
         textArea2.setPreferredSize(new Dimension(390, 175));
         textArea2.setEditable(false);
         textArea2.setBackground(new Color(233, 233, 233));
         textArea2.setFont(mainFont);
         textArea2.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLoweredBevelBorder(),
-            BorderFactory.createEmptyBorder(5, 8, 5, 8)));
-            
+                BorderFactory.createLoweredBevelBorder(),
+                BorderFactory.createEmptyBorder(5, 8, 5, 8)));
+
         bottomPanel.add(textArea);
         bottomPanel.add(textArea2);
 
