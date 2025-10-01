@@ -354,6 +354,7 @@ public class GameGUI implements ActionListener {
         // Style text areas with better borders and spacing
         textArea.setPreferredSize(new Dimension(390, 175));
         textArea.setEditable(false);
+        textArea.setFocusable(false);
         textArea.setBackground(new Color(233, 233, 233));
         textArea.setFont(mainFont);
         textArea.setBorder(BorderFactory.createCompoundBorder(
@@ -362,6 +363,7 @@ public class GameGUI implements ActionListener {
 
         textArea2.setPreferredSize(new Dimension(390, 175));
         textArea2.setEditable(false);
+        textArea2.setFocusable(false);
         textArea2.setBackground(new Color(233, 233, 233));
         textArea2.setFont(mainFont);
         textArea2.setBorder(BorderFactory.createCompoundBorder(
