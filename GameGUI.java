@@ -155,6 +155,7 @@ public class GameGUI implements ActionListener {
         Container container = frame.getContentPane();
         frame.setSize(800, 600);
         frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setTitle("Card Game");
 
