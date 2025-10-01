@@ -428,7 +428,7 @@ public class GameMaster {
      */
     public void newCardDeck() {
         try {
-            FileReader reader = new FileReader("newCards.txt");
+            FileReader reader = new FileReader("assets/newCards.txt");
             Scanner sc = new Scanner(reader);
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();

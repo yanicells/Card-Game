@@ -311,10 +311,10 @@ public class GameGUI implements ActionListener {
         subTopPanelRight.setLayout(new FlowLayout());
         subBottomPanelRight.setLayout(new FlowLayout());
 
-        dragonImage = new ImageIcon("dragon.png");
-        fairyImage = new ImageIcon("fairy.png");
-        ghostImage = new ImageIcon("ghost.png");
-        humanImage = new ImageIcon("human.png");
+        dragonImage = new ImageIcon("assets/dragon.png");
+        fairyImage = new ImageIcon("assets/fairy.png");
+        ghostImage = new ImageIcon("assets/ghost.png");
+        humanImage = new ImageIcon("assets/human.png");
 
         String displayPlayer1 = String.format("Player 1: %s | Tokens: %s", gameMaster.getPlayer1().getName(),
                 gameMaster.getPlayer1().getTokens());
@@ -669,7 +669,7 @@ public class GameGUI implements ActionListener {
      * The music will loop for 15 iterations.
      */
     private void setUpAudio() {
-        file = new File("theme.wav");
+        file = new File("assets/theme.wav");
         try {
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
             clip = AudioSystem.getClip();
