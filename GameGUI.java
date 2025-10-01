@@ -7,26 +7,30 @@ import java.io.File;
 import java.io.IOException;
 
 /**
-        The GameGUI class is responsible for setting up and managing the graphical user interface (GUI) of the card game.
-        It handles the creation and layout of various panels, buttons, and labels that represent the game state and
-        interact with the user. The class also manages user input for starting the game, taking actions (e.g., Attack, Swap),
-        and displaying the results of the game.
-        The GameGUI class implements ActionListener to handle button clicks and initiate corresponding actions in the game.
-
-        @author Edrian Miguel E. Capistrano (240939)
-        @version December 5, 2024
-
-        I have not discussed the Java language code in my program
-        with anyone other than my instructor or the teaching assistants
-        assigned to this course.
-
-        I have not used Java language code obtained from another student,
-        or any other unauthorized source, either modified or unmodified.
-
-        If any Java language code or documentation used in my program
-        was obtained from another source, such as a textbook or website,
-        that has been clearly noted with a proper citation in the comments
-        of my program.
+ * The GameGUI class is responsible for setting up and managing the graphical
+ * user interface (GUI) of the card game.
+ * It handles the creation and layout of various panels, buttons, and labels
+ * that represent the game state and
+ * interact with the user. The class also manages user input for starting the
+ * game, taking actions (e.g., Attack, Swap),
+ * and displaying the results of the game.
+ * The GameGUI class implements ActionListener to handle button clicks and
+ * initiate corresponding actions in the game.
+ * 
+ * @author Edrian Miguel E. Capistrano (240939)
+ * @version December 5, 2024
+ * 
+ *          I have not discussed the Java language code in my program
+ *          with anyone other than my instructor or the teaching assistants
+ *          assigned to this course.
+ * 
+ *          I have not used Java language code obtained from another student,
+ *          or any other unauthorized source, either modified or unmodified.
+ * 
+ *          If any Java language code or documentation used in my program
+ *          was obtained from another source, such as a textbook or website,
+ *          that has been clearly noted with a proper citation in the comments
+ *          of my program.
  */
 
 public class GameGUI implements ActionListener {
@@ -86,11 +90,14 @@ public class GameGUI implements ActionListener {
     ImageIcon humanImage;
 
     /**
-     * Constructor for the GameGUI class. It initializes all the GUI components, including buttons, panels, labels,
-     * text areas, and images. The constructor sets up the game interface for player interaction, such as displaying
-     * the player's cards, allowing them to choose actions (Attack, Swap, Ultimate, Heal), and initializing the game window.
+     * Constructor for the GameGUI class. It initializes all the GUI components,
+     * including buttons, panels, labels,
+     * text areas, and images. The constructor sets up the game interface for player
+     * interaction, such as displaying
+     * the player's cards, allowing them to choose actions (Attack, Swap, Ultimate,
+     * Heal), and initializing the game window.
      */
-    public GameGUI(){
+    public GameGUI() {
         frame = new JFrame();
         topPanel = new JPanel();
         leftPanel = new JPanel();
@@ -130,20 +137,23 @@ public class GameGUI implements ActionListener {
 
         player1NameLabel = new JLabel();
         player2NameLabel = new JLabel();
-        player1NamePanel =  new JPanel();
-        player2NamePanel =  new JPanel();
+        player1NamePanel = new JPanel();
+        player2NamePanel = new JPanel();
     }
 
     /**
-     * Sets up the graphical user interface (GUI) by configuring the layout, initializing the game elements,
-     * and adding action listeners for the buttons. This method also sets up the audio and the game window.
-     * This is the main window where the game is played. It is divided into two parts. The left for player 1 while
+     * Sets up the graphical user interface (GUI) by configuring the layout,
+     * initializing the game elements,
+     * and adding action listeners for the buttons. This method also sets up the
+     * audio and the game window.
+     * This is the main window where the game is played. It is divided into two
+     * parts. The left for player 1 while
      * the right is for player 2.
      */
-    public void setUpGUI(){
+    public void setUpGUI() {
         setUpAudio();
         Container container = frame.getContentPane();
-        frame.setSize(800,600);
+        frame.setSize(800, 600);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setTitle("Card Game");
@@ -278,10 +288,10 @@ public class GameGUI implements ActionListener {
 
         leftPanel.setLayout(new BorderLayout());
         rightPanel.setLayout(new BorderLayout());
-        
+
         subTopPanelLeft.setLayout(new FlowLayout());
         subBottomPanelLeft.setLayout(new FlowLayout());
-        
+
         subTopPanelRight.setLayout(new FlowLayout());
         subBottomPanelRight.setLayout(new FlowLayout());
 
@@ -290,8 +300,10 @@ public class GameGUI implements ActionListener {
         ghostImage = new ImageIcon("ghost.png");
         humanImage = new ImageIcon("human.png");
 
-        String displayPlayer1 = String.format("Player 1: %s | Tokens: %s", gameMaster.getPlayer1().getName(),gameMaster.getPlayer1().getTokens());
-        String displayPlayer2 = String.format("Player 2: %s | Tokens: %s", gameMaster.getPlayer2().getName(),gameMaster.getPlayer2().getTokens());
+        String displayPlayer1 = String.format("Player 1: %s | Tokens: %s", gameMaster.getPlayer1().getName(),
+                gameMaster.getPlayer1().getTokens());
+        String displayPlayer2 = String.format("Player 2: %s | Tokens: %s", gameMaster.getPlayer2().getName(),
+                gameMaster.getPlayer2().getTokens());
 
         player1NameLabel.setText(displayPlayer1);
         player2NameLabel.setText(displayPlayer2);
@@ -317,7 +329,7 @@ public class GameGUI implements ActionListener {
         rightPanel.add(player2NamePanel, BorderLayout.NORTH);
         rightPanel.add(subTopPanelRight, BorderLayout.CENTER);
         rightPanel.add(subBottomPanelRight, BorderLayout.SOUTH);
-                
+
         topPanel.add(attackButton);
         topPanel.add(swapButton);
         topPanel.add(ultimateButton);
@@ -364,14 +376,15 @@ public class GameGUI implements ActionListener {
     /**
      * Launches the input part of the GUI.
      * Sets up the frame with player name inputs, randomization, deck options,
-     * and the start game button, as well as configuring the layout and displaying the window.
+     * and the start game button, as well as configuring the layout and displaying
+     * the window.
      */
-    public void launchGUI(){
+    public void launchGUI() {
         frameLaunch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLaunch.setSize(350, 200);
         frameLaunch.setResizable(false);
 
-        frameLaunch.setLayout(new GridLayout(5,2));
+        frameLaunch.setLayout(new GridLayout(5, 2));
 
         frameLaunch.add(namePlayer1Label);
         frameLaunch.add(inputNamePlayer1);
@@ -387,6 +400,7 @@ public class GameGUI implements ActionListener {
 
         frameLaunch.add(new JPanel());
         frameLaunch.add(startGameButton);
+        frameLaunch.setLocationRelativeTo(null);
 
         frameLaunch.setVisible(true);
 
@@ -399,7 +413,7 @@ public class GameGUI implements ActionListener {
      *
      * @param statistic The game results to be displayed in the text area.
      */
-    public void gameStatistics(String statistic){
+    public void gameStatistics(String statistic) {
         clip.close();
         endFrame = new JFrame();
         gameResult = new JTextArea();
@@ -415,7 +429,8 @@ public class GameGUI implements ActionListener {
     }
 
     /**
-     * Handles button click events for various actions such as attack, swap, ultimate, heal,
+     * Handles button click events for various actions such as attack, swap,
+     * ultimate, heal,
      * and starting a new game. Updates the game state and GUI accordingly.
      *
      * @param e The action event triggered by the button click.
@@ -424,44 +439,47 @@ public class GameGUI implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String textOutput = "";
         String endOutput = "";
-        if(e.getSource() == attackButton){
+        if (e.getSource() == attackButton) {
             textOutput = gameMaster.play("attack");
             updateTextArea(textOutput);
             updateCards(gameMaster.getPlayer1(), gameMaster.getPlayer2());
-        }else if(e.getSource() == swapButton){
+        } else if (e.getSource() == swapButton) {
             textOutput = gameMaster.play("swap");
             updateTextArea(textOutput);
             updateCards(gameMaster.getPlayer1(), gameMaster.getPlayer2());
-        }else if(e.getSource() == ultimateButton){
+        } else if (e.getSource() == ultimateButton) {
             textOutput = gameMaster.play("ultimate");
             updateTextArea(textOutput);
             updateCards(gameMaster.getPlayer1(), gameMaster.getPlayer2());
-        }else if(e.getSource() == healButton){
+        } else if (e.getSource() == healButton) {
             textOutput = gameMaster.play("heal");
             updateTextArea(textOutput);
             updateCards(gameMaster.getPlayer1(), gameMaster.getPlayer2());
-        }else if(e.getSource() == startGameButton){
-            String gameDetails = String.format("%s %s %s %s", inputNamePlayer1.getText(), inputNamePlayer2.getText(), inputRandom.getText(), inputNewDeck.getText());
+        } else if (e.getSource() == startGameButton) {
+            String gameDetails = String.format("%s %s %s %s", inputNamePlayer1.getText(), inputNamePlayer2.getText(),
+                    inputRandom.getText(), inputNewDeck.getText());
             String[] input = gameDetails.split(" ");
-            gameMaster = new GameMaster(new Player(input[0]), new Player(input[1]), input[2].equals("random"), input[3].equals("new"));
+            gameMaster = new GameMaster(new Player(input[0]), new Player(input[1]), input[2].equals("random"),
+                    input[3].equals("new"));
             frameLaunch.setVisible(false);
             setUpGUI();
         }
-        if(gameMaster.hasWinner()){
+        if (gameMaster.hasWinner()) {
             attackButton.setEnabled(false);
             swapButton.setEnabled(false);
             ultimateButton.setEnabled(false);
             healButton.setEnabled(false);
             endOutput = gameMaster.gameReport();
             gameStatistics(endOutput);
-        }else{
+        } else {
             updateCards(gameMaster.getPlayer1(), gameMaster.getPlayer2());
         }
     }
 
     /**
      * Updates the display of cards for both players.
-     * Refreshes the card information and the visual representations of the cards on the GUI.
+     * Refreshes the card information and the visual representations of the cards on
+     * the GUI.
      * Calls the addPicture method as a helper.
      *
      * @param player1 The first player whose cards will be updated.
@@ -534,25 +552,28 @@ public class GameGUI implements ActionListener {
     }
 
     /**
-     * This is a helper method that adds a picture representing a card type to the corresponding label.
-     * The size of the image is adjusted based on whether it is the main card or not.
+     * This is a helper method that adds a picture representing a card type to the
+     * corresponding label.
+     * The size of the image is adjusted based on whether it is the main card or
+     * not.
      *
-     * @param type The type of the card (e.g., "Dragon", "Ghost", "Fairy", "Human").
-     * @param card The JLabel to which the image will be added.
+     * @param type     The type of the card (e.g., "Dragon", "Ghost", "Fairy",
+     *                 "Human").
+     * @param card     The JLabel to which the image will be added.
      * @param mainCard True if the card is the main card, false otherwise.
      */
-    private void addPicture(String type, JLabel card, boolean mainCard){
-        if(type.equals("Dragon")){
-            if(mainCard){
+    private void addPicture(String type, JLabel card, boolean mainCard) {
+        if (type.equals("Dragon")) {
+            if (mainCard) {
                 Image resized = dragonImage.getImage().getScaledInstance(120, 140, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(resized);
                 card.setIcon(newImage);
-            }else{
+            } else {
                 Image resized = dragonImage.getImage().getScaledInstance(65, 85, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(resized);
                 card.setIcon(newImage);
             }
-        }else if (type.equals("Ghost")) {
+        } else if (type.equals("Ghost")) {
             if (mainCard) {
                 Image resized = ghostImage.getImage().getScaledInstance(120, 140, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(resized);
@@ -562,7 +583,7 @@ public class GameGUI implements ActionListener {
                 ImageIcon newImage = new ImageIcon(resized);
                 card.setIcon(newImage);
             }
-        }else if (type.equals("Fairy")) {
+        } else if (type.equals("Fairy")) {
             if (mainCard) {
                 Image resized = fairyImage.getImage().getScaledInstance(120, 140, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(resized);
@@ -572,7 +593,7 @@ public class GameGUI implements ActionListener {
                 ImageIcon newImage = new ImageIcon(resized);
                 card.setIcon(newImage);
             }
-        }else if (type.equals("Human")) {
+        } else if (type.equals("Human")) {
             if (mainCard) {
                 Image resized = humanImage.getImage().getScaledInstance(120, 140, Image.SCALE_SMOOTH);
                 ImageIcon newImage = new ImageIcon(resized);
@@ -590,8 +611,10 @@ public class GameGUI implements ActionListener {
      * Also alternates the color of the labels to indicate whose turn it is.
      */
     private void updateName() {
-        String displayPlayer1 = String.format("Player 1: %s | Tokens: %s", gameMaster.getPlayer1().getName(),gameMaster.getPlayer1().getTokens());
-        String displayPlayer2 = String.format("Player 2: %s | Tokens: %s", gameMaster.getPlayer2().getName(),gameMaster.getPlayer2().getTokens());
+        String displayPlayer1 = String.format("Player 1: %s | Tokens: %s", gameMaster.getPlayer1().getName(),
+                gameMaster.getPlayer1().getTokens());
+        String displayPlayer2 = String.format("Player 2: %s | Tokens: %s", gameMaster.getPlayer2().getName(),
+                gameMaster.getPlayer2().getTokens());
         player1NameLabel.setText(displayPlayer1);
         player2NameLabel.setText(displayPlayer2);
 
@@ -609,13 +632,13 @@ public class GameGUI implements ActionListener {
      * It loads the audio file and prepares the audio clip for playback.
      * The music will loop for 15 iterations.
      */
-    private void setUpAudio(){
+    private void setUpAudio() {
         file = new File("theme.wav");
-        try{
+        try {
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
             clip = AudioSystem.getClip();
             clip.open(audioStream);
-        }catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -627,15 +650,16 @@ public class GameGUI implements ActionListener {
 
     /**
      * Updates the game text output based on the turn counter.
-     * Displays the output either in the left or right text area depending on the player's turn.
+     * Displays the output either in the left or right text area depending on the
+     * player's turn.
      *
      * @param output The text that will be displayed in the text area.
      */
-    private void updateTextArea(String output){
+    private void updateTextArea(String output) {
         int turnUpdate = gameMaster.hasWinner() ? gameMaster.getTurnCounter() + 1 : gameMaster.getTurnCounter();
-        if(turnUpdate % 2 == 0){
+        if (turnUpdate % 2 == 0) {
             textArea.setText(output);
-        }else{
+        } else {
             textArea2.setText(output);
         }
     }
