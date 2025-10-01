@@ -5,6 +5,7 @@ A Java-based card battle game with GUI interface. Players use different card typ
 ## How to Run
 
 1. **Compile and run:**
+
    ```bash
    javac *.java && java GameApp
    ```
@@ -25,4 +26,3 @@ A Java-based card battle game with GUI interface. Players use different card typ
 ## Requirements
 
 - Java JDK 8 or higher
-- All image and audio files must be in the same directory
