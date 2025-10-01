@@ -382,27 +382,36 @@ public class GameGUI implements ActionListener {
      */
     public void launchGUI() {
         frameLaunch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameLaunch.setSize(350, 200);
+        frameLaunch.setSize(400, 220);
         frameLaunch.setResizable(false);
+        frameLaunch.setTitle("Card Game Setup");
 
-        frameLaunch.setLayout(new GridLayout(5, 2));
+        // Create main panel with some padding
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(5, 2, 10, 8));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
 
-        frameLaunch.add(namePlayer1Label);
-        frameLaunch.add(inputNamePlayer1);
+        // Style the start button slightly
+        startGameButton.setFont(new Font("Arial", Font.BOLD, 12));
+        startGameButton.setPreferredSize(new Dimension(120, 30));
 
-        frameLaunch.add(namePlayer2Label);
-        frameLaunch.add(inputNamePlayer2);
+        mainPanel.add(namePlayer1Label);
+        mainPanel.add(inputNamePlayer1);
 
-        frameLaunch.add(setRandomLabel);
-        frameLaunch.add(inputRandom);
+        mainPanel.add(namePlayer2Label);
+        mainPanel.add(inputNamePlayer2);
 
-        frameLaunch.add(setNewDeckLabel);
-        frameLaunch.add(inputNewDeck);
+        mainPanel.add(setRandomLabel);
+        mainPanel.add(inputRandom);
 
-        frameLaunch.add(new JPanel());
-        frameLaunch.add(startGameButton);
+        mainPanel.add(setNewDeckLabel);
+        mainPanel.add(inputNewDeck);
+
+        mainPanel.add(new JPanel());
+        mainPanel.add(startGameButton);
+
+        frameLaunch.add(mainPanel);
         frameLaunch.setLocationRelativeTo(null);
-
         frameLaunch.setVisible(true);
 
         startGameButton.addActionListener(this);
