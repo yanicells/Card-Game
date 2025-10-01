@@ -153,32 +153,47 @@ public class GameGUI implements ActionListener {
     public void setUpGUI() {
         setUpAudio();
         Container container = frame.getContentPane();
-        frame.setSize(800, 600);
+        frame.setSize(850, 650);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setTitle("Card Game");
+        frame.setTitle("Card Game - Battle Arena");
 
-        leftPanel.setPreferredSize(new Dimension(400, 465));
-        rightPanel.setPreferredSize(new Dimension(400, 465));
-        topPanel.setPreferredSize(new Dimension(600, 45));
-        bottomPanel.setPreferredSize(new Dimension(600, 180));
+        leftPanel.setPreferredSize(new Dimension(425, 490));
+        rightPanel.setPreferredSize(new Dimension(425, 490));
+        topPanel.setPreferredSize(new Dimension(650, 55));
+        bottomPanel.setPreferredSize(new Dimension(650, 200));
         topPanel.setBackground(new Color(238, 238, 238));
         leftPanel.setBackground(new Color(238, 238, 238));
         rightPanel.setBackground(new Color(238, 238, 238));
         bottomPanel.setBackground(new Color(238, 238, 238));
-        bottomPanel.setLayout(new FlowLayout());
+        bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
 
-        topPanel.setLayout(new FlowLayout());
+        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
 
-        attackButton.setPreferredSize(new Dimension(100, 35));
-        swapButton.setPreferredSize(new Dimension(100, 35));
-        ultimateButton.setPreferredSize(new Dimension(100, 35));
-        healButton.setPreferredSize(new Dimension(100, 35));
+        // Style action buttons with better appearance
+        Font buttonFont = new Font("Arial", Font.BOLD, 12);
+        
+        attackButton.setPreferredSize(new Dimension(110, 40));
+        swapButton.setPreferredSize(new Dimension(110, 40));
+        ultimateButton.setPreferredSize(new Dimension(110, 40));
+        healButton.setPreferredSize(new Dimension(110, 40));
+        
         attackButton.setBackground(new Color(233, 233, 233));
         swapButton.setBackground(new Color(233, 233, 233));
         ultimateButton.setBackground(new Color(233, 233, 233));
         healButton.setBackground(new Color(233, 233, 233));
+        
+        attackButton.setFont(buttonFont);
+        swapButton.setFont(buttonFont);
+        ultimateButton.setFont(buttonFont);
+        healButton.setFont(buttonFont);
+        
+        attackButton.setBorder(BorderFactory.createRaisedBevelBorder());
+        swapButton.setBorder(BorderFactory.createRaisedBevelBorder());
+        ultimateButton.setBorder(BorderFactory.createRaisedBevelBorder());
+        healButton.setBorder(BorderFactory.createRaisedBevelBorder());
+        
         attackButton.setFocusable(false);
         swapButton.setFocusable(false);
         ultimateButton.setFocusable(false);
@@ -336,14 +351,23 @@ public class GameGUI implements ActionListener {
         topPanel.add(ultimateButton);
         topPanel.add(healButton);
 
-        textArea.setPreferredSize(new Dimension(375, 170));
+        // Style text areas with better borders and spacing
+        textArea.setPreferredSize(new Dimension(390, 175));
         textArea.setEditable(false);
         textArea.setBackground(new Color(233, 233, 233));
         textArea.setFont(mainFont);
-        textArea2.setPreferredSize(new Dimension(375, 170));
+        textArea.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLoweredBevelBorder(),
+            BorderFactory.createEmptyBorder(5, 8, 5, 8)));
+            
+        textArea2.setPreferredSize(new Dimension(390, 175));
         textArea2.setEditable(false);
         textArea2.setBackground(new Color(233, 233, 233));
         textArea2.setFont(mainFont);
+        textArea2.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLoweredBevelBorder(),
+            BorderFactory.createEmptyBorder(5, 8, 5, 8)));
+            
         bottomPanel.add(textArea);
         bottomPanel.add(textArea2);
 
